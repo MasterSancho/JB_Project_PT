@@ -179,12 +179,14 @@ scan_type() {
             scan_type="basic"
             echo "--> Performing basic scan on $target_ip..."
             sudo nmap -sV $target_ip >> $output_file
+            # Executes a fast UDP scan on common ports
             sudo nmap -sU -T4 --version-light --min-rate 1000 --max-retries 1 -n -p U:53,67,68,69,88,123,137,138,161,162,389,500,514,1194,1701,1900,4500,5004,5005,5060,5061 -sV $target_ip >> $output_file
             break
         elif [ "$scan_choice" == "2" ]; then
             scan_type="full"
             echo "--> Performing full scan on $target_ip..."
             sudo nmap -sV --script=vuln -T4 $target_ip >> $output_file
+            # Executes a fast UDP scan on common ports
             sudo nmap -sU -T4 --version-light --min-rate 1000 --max-retries 1 -n -p U:53,67,68,69,88,123,137,138,161,162,389,500,514,1194,1701,1900,4500,5004,5005,5060,5061 -sV $target_ip >> $output_file  
             break
         else
