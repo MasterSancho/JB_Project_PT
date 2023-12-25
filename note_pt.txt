@@ -1,0 +1,35 @@
+sudo nmap -sU -T4 --version-light --min-rate 1000 --max-retries 1 -n -p U:53,67,68,69,88,123,137,138,161,162,389,500,514,1194,1701,1900,4500,5004,5005,5060,5061 192.168.32.135
+
+sudo nmap -sU -T4 --version-light --min-rate 1000 --max-retries 1 -n -p U:53,67,68,69,88,123,137,138,161,162,389,500,514,1194,1701,1900,4500,5004,5005,5060,5061 $target_ip -oN $output_file
+
+sudo nmap -sU -T4 --version-light --min-rate 1000 --max-retries 1 -n -p U:53,67,68,69,123,137,138,161,162,389,500,514,1194,1701,1900,4500,5060,5061 192.168.32.135
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2023-12-21 12:04 EST
+Nmap scan report for 192.168.32.135
+Host is up (0.0020s latency).
+
+PORT     STATE         SERVICE
+53/udp   open|filtered domain
+67/udp   closed        dhcps
+68/udp   open|filtered dhcpc
+69/udp   open|filtered tftp
+123/udp  closed        ntp
+137/udp  open          netbios-ns
+138/udp  open|filtered netbios-dgm
+161/udp  open|filtered snmp
+162/udp  open|filtered snmptrap
+389/udp  open|filtered ldap
+500/udp  open|filtered isakmp
+514/udp  open|filtered syslog
+1194/udp open|filtered openvpn
+1701/udp open|filtered L2TP
+1900/udp closed        upnp
+4500/udp open|filtered nat-t-ike
+5060/udp closed        sip
+5061/udp closed        sip-tls
+MAC Address: 00:0C:29:A8:15:1B (VMware)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.49 seconds
+
+-------------------------------------------------
+
